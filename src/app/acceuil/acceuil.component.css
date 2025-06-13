@@ -1,0 +1,241 @@
+.container {
+  transition: background 0.5s ease-in-out;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Ambiance info */
+.container.info {
+  background: linear-gradient(to bottom, #1e1e2f, #2e2e3e);
+  color: #ffffff;
+}
+
+.container.info::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  background-image: url('/assets/icons/code.svg'); /* adapte le chemin */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.container.info::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-image: url('/assets/icons/chip.svg'); /* adapte le chemin */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+/* Ambiance escalade */
+.container.escalade {
+  background: linear-gradient(to bottom, #e0f7e9, #b2dfdb);
+  color: #2d3a2d;
+}
+
+.container.escalade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 160px;
+  background-image: url('/assets/images/climber-devers.svg'); /* adapte le chemin */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+
+
+
+.toggle-slider {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggle-slider button {
+    background: #eee;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.toggle-slider button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.bio-section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.bio-section h2 {
+    margin-top: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+
+.labels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 6px;
+    font-weight: 600;
+    color: #939292;
+    user-select: none;
+
+    span.active {
+        color: #007bff;
+    }
+}
+
+.slider {
+    width: 10%;
+    transition: all 0.3s ease-in-out;
+    appearance: none;
+    height: 30px;
+    background: linear-gradient(to right, #2196f3 0%, #07ad2b 100%);
+    border-radius: 20px;
+    outline: none;
+    padding-left: 12px;   /* Ajoute du padding à gauche */
+    box-sizing: border-box;
+}
+
+/* Décale le thumb pour Chrome/Safari */
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateX(-6px); /* Décale le thumb vers la droite */
+}
+
+/* Décale le thumb pour Firefox */
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateX(-6px); /* Décale le thumb vers la droite */
+}
+
+.slider-container {
+    width: 100%;
+    max-width: 100px;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s ease;
+}
+
+.content {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+:host {
+  display: block;
+  height: 100%;
+}
+.climbing-image {
+  position: fixed; /* fixe par rapport à la fenêtre */
+  top: 0;
+  right: 0;
+  height: 100px;   /* tu peux ajuster */
+  width: auto;
+  margin: 10px;    /* un peu d’espace depuis le bord */
+  z-index: 1000;   /* pour être devant tout */
+}
+.split-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.split {
+  height: 100%;
+  transition: width 0.4s cubic-bezier(.77,0,.18,1);
+}
+
+.split-info {
+  background: linear-gradient(to bottom, #1e1e2f, #2e2e3e);
+}
+
+.split-escalade {
+   background: linear-gradient(to bottom, #355c3a, #6b8f71); /* vert forêt foncé vers vert mousse */
+}
+
+.split-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+/* Responsive example */
+@media (max-width: 600px) {
+  .split-content {
+    padding: 1rem;
+  }
+  .labels {
+    gap: 8px;
+  }
+}
+.climbing-image{
+  position: fixed; /* fixe par rapport à la fenêtre */
+  top: -20px; /* ajuste la position verticale */
+  right: -10px;
+  height: 200px;   /* tu peux ajuster */
+  width: auto;
+  margin: 10px;    /* un peu d’espace depuis le bord */
+  z-index: 1000;   /* pour être devant tout */
+}
+.content.escalade{
+  background: linear-gradient(to bottom, #e6f2e6, #b7cbb0); /* vert très clair vers vert feuille doux */
+  color: #234d20; /* vert foncé pour le texte */
+  width: 48%;
+  border-radius: 10px;
+}
+.content.info{
+  background: linear-gradient(to bottom, #2f2f47, #2e2e3e);
+  border-radius: 10px;
+  color: #ffffff;
+  width: 48%;
+}
