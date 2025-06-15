@@ -124,6 +124,7 @@ li {
     outline: none;
     padding-left: 12px;   /* Ajoute du padding à gauche */
     box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 /* Décale le thumb pour Chrome/Safari */
@@ -238,4 +239,7 @@ li {
   border-radius: 10px;
   color: #ffffff;
   width: 48%;
+}
+.split-content, .main-content {
+  padding-top: 70px; /* adapte à la hauteur de ton header */
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CategoryService } from '../../category.service'; // Adjust the path as necessary
 
 
 @Component({
@@ -10,22 +11,32 @@ import { CommonModule } from '@angular/common';
   standalone: true
 })
 export class AccueilComponent {
+@Output() CategoryChange = new EventEmitter<String>();
+
+
   selectedCategory: 'info' | 'escalade' = 'info';
   sliderValue = 0;
 
+  constructor(private categoryService: CategoryService) {}
+
   toggleCategory(category: 'info' | 'escalade') {
     this.selectedCategory = category;
+    this.categoryService.setCategory(category);
   }
-  onSliderInput(event: Event) {
-  this.sliderValue = +(event.target as HTMLInputElement).value
-  this.selectedCategory = this.sliderValue < 50 ? 'info' : 'escalade';
-  }
-  onSliderChange(event: Event) {
-  const value = +(event.target as HTMLInputElement).value;
-  const snapTo = value < 50 ? 0 : 100;
 
-  this.sliderValue = snapTo;
-  this.selectedCategory = snapTo === 0 ? 'info' : 'escalade';
+  onSliderInput(event: Event) {
+    this.sliderValue = +(event.target as HTMLInputElement).value;
+    this.selectedCategory = this.sliderValue < 50 ? 'info' : 'escalade';
+    this.categoryService.setCategory(this.selectedCategory);
+  }
+
+  onSliderChange(event: Event) {
+    const value = +(event.target as HTMLInputElement).value;
+    const snapTo = value < 50 ? 0 : 100;
+    this.sliderValue = snapTo;
+    this.selectedCategory = snapTo === 0 ? 'info' : 'escalade';
+    this.categoryService.setCategory(this.selectedCategory);
+    this.CategoryChange.emit(snapTo === 0 ? 'info' : 'escalade');
   }
 
 
