@@ -243,3 +243,11 @@ li {
 .split-content, .main-content {
   padding-top: 70px; /* adapte à la hauteur de ton header */
 }
+.climbing-image-over-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 120px;
+  z-index: 30000; /* plus grand que le header */
+  pointer-events: none;
+}
