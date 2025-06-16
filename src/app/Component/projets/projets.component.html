@@ -1,0 +1,20 @@
+<div class="labels">
+  <span [class.active]="selectedCategory === 'info'">Informatique</span>
+  <input
+    type="range"
+    min="0"
+    max="100"
+    [value]="selectedCategory === 'info' ? 0 : 100"
+    (input)="onSliderInput($event)"
+    (change)="onSliderChange($event)"
+    class="slider"
+  />
+  <span [class.active]="selectedCategory === 'escalade'">Escalade</span>
+</div>
+
+<div class="projets-list">
+  <div *ngFor="let projet of projetsFiltres">
+    <h3>{{ projet.titre }}</h3>
+    <p>{{ projet.description }}</p>
+  </div>
+</div>
