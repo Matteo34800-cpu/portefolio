@@ -16,6 +16,7 @@ export class ProjetsComponent implements OnInit {
   selectedCategory: 'info' | 'escalade' = 'info';
   @Output() CategoryChange = new EventEmitter<String>();
   sliderValue = 0;
+  selectedProjet: any = null;
 
 
   constructor(private http: HttpClient, private categoryService: CategoryService) {}
@@ -43,5 +44,13 @@ export class ProjetsComponent implements OnInit {
   }
   get projetsFiltres() {
     return this.projets.filter(p => p.type === this.selectedCategory);
+  }
+
+  openProjet(projet: any) {
+    this.selectedProjet = projet;
+  }
+
+  closeProjet() {
+    this.selectedProjet = null;
   }
 }

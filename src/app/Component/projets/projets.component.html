@@ -18,6 +18,18 @@
     *ngFor="let projet of projetsFiltres"
     [type]="projet.type"
     [titre]="projet.titre"
-    [description]="projet.description">
+    [description]="projet.description"
+    (click)="openProjet(projet)">
   </app-project-card>
+</div>
+
+<!-- Modale projet détaillé -->
+<div class="modal-backdrop" *ngIf="selectedProjet" (click)="closeProjet()"></div>
+<div class="modal" *ngIf="selectedProjet">
+  <button class="close-btn" (click)="closeProjet()">×</button>
+  <h2>{{ selectedProjet.titre }}</h2>
+  <p>{{ selectedProjet.details }}</p>
+  <div class="modal-images">
+    <img *ngFor="let img of selectedProjet.images" [src]="img" alt="Image projet" />
+  </div>
 </div>
