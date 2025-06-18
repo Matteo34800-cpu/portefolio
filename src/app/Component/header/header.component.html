@@ -2,7 +2,12 @@
   <a routerLink="/intro" routerLinkActive="active" class="logo-link">
     <img src="assets/images/favicon-32x32.png" alt="Logo" class="logo">
   </a>
-  <a routerLink="/accueil" routerLinkActive="active">Accueil</a>
-  <a routerLink="/projets" routerLinkActive="active">Projets</a>
-  <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  <button class="burger" (click)="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" [class.open]="menuOpen">
+    <a routerLink="/accueil" routerLinkActive="active" (click)="closeMenu()">Accueil</a>
+    <a routerLink="/projets" routerLinkActive="active" (click)="closeMenu()">Projets</a>
+    <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
+  </div>
 </nav>

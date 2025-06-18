@@ -12,10 +12,19 @@ import { CategoryService } from '../../category.service';
 })
 export class HeaderComponent {
   selectedCategory: 'info' | 'escalade' = 'info';
+  menuOpen = false;
 
   constructor(private categoryService: CategoryService) {
     this.categoryService.category$.subscribe(category => {
       this.selectedCategory = category;
     });
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 }
