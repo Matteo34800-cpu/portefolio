@@ -30,11 +30,17 @@
   color: #07ad2b;
 }
 
-.project-card.escalade .project-type {
-  color: #e67e22;
+.project-card.escalade {
+  background: linear-gradient(135deg, #1ed760 0%, #0e7c3a 100%);
+  color: #fff;
+  border: 2px solid #1ed760;
 }
 
-.project-title {
+.project-card.escalade .project-type {
+  color: #fff;
+}
+
+.project-card.escalade .project-title {
   margin: 0 0 0.5rem 0;
   font-size: 1.4rem;
   font-weight: 700;

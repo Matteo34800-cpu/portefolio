@@ -19,13 +19,17 @@ export class ProjetsComponent implements OnInit {
   selectedProjet: any = null;
 
 
-  constructor(private http: HttpClient, private categoryService: CategoryService) {}
+  constructor(private http: HttpClient, private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.http.get<any[]>('assets/jsons/projets.json').subscribe(data => {
       this.projets = data;
     });
-    this.categoryService.category$.subscribe(cat => this.selectedCategory = cat);
+    this.categoryService.category$.subscribe(cat => {
+      this.selectedCategory = cat
+      this.sliderValue = cat === 'info' ? 0 : 100;
+    }
+    );
   }
 
   onSliderInput(event: Event) {

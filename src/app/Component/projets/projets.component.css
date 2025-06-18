@@ -51,7 +51,7 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  margin-top: 90px; /* adapte à la hauteur de ton header */
+  margin-top: 6px;
   font-weight: 600;
   color: #939292;
   user-select: none;
@@ -184,6 +184,24 @@
   box-shadow: 0 2px 8px rgba(44, 62, 80, 0.18);
 }
 
+/* Container styles */
+.container {
+  transition: background 0.5s ease-in-out;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 90px;
+}
+
+.container.info {
+  background: linear-gradient(to bottom, #1e1e2f, #2e2e3e);
+  color: #fff;
+}
+
+.container.escalade {
+  background: linear-gradient(to bottom, #e0f7e9, #b2dfdb);
+  color: #2d3a2d;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .projets-list {
@@ -196,5 +214,8 @@
   }
   .slider {
     width: 100px;
+  }
+  .labels {
+    gap: 8px;
   }
 }

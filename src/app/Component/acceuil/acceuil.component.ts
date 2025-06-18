@@ -19,6 +19,15 @@ export class AccueilComponent {
 
   constructor(private categoryService: CategoryService) {}
 
+  ngOnInit() {
+    this.categoryService.category$.subscribe(cat =>{
+       this.selectedCategory = cat;
+      this.sliderValue = cat === 'info' ? 0 : 100;
+    }
+      );
+    
+  }
+
   toggleCategory(category: 'info' | 'escalade') {
     this.selectedCategory = category;
     this.categoryService.setCategory(category);

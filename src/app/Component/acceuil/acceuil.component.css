@@ -7,7 +7,7 @@
 /* Ambiance info */
 .container.info {
   background: linear-gradient(to bottom, #1e1e2f, #2e2e3e);
-  color: #ffffff;
+  color: #fff;
 }
 
 .container.info::before {
@@ -108,14 +108,16 @@ li {
     font-weight: 600;
     color: #939292;
     user-select: none;
+}
 
-    span.active {
-        color: #007bff;
-    }
+.labels span.active {
+  color: #007bff;
 }
 
 .slider {
     width: 10%;
+    min-width: 120px;
+    max-width: 220px;
     transition: all 0.3s ease-in-out;
     appearance: none;
     height: 30px;
@@ -179,6 +181,7 @@ li {
   width: auto;
   margin: 10px;    /* un peu d’espace depuis le bord */
   z-index: 1000;   /* pour être devant tout */
+  pointer-events: none;
 }
 .split-bg {
   position: fixed;

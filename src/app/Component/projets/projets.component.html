@@ -1,35 +1,36 @@
-<div class="labels">
-  <span [class.active]="selectedCategory === 'info'">Informatique</span>
-  <input
-    type="range"
-    min="0"
-    max="100"
-    [value]="selectedCategory === 'info' ? 0 : 100"
-    (input)="onSliderInput($event)"
-    (change)="onSliderChange($event)"
-    class="slider"
-  />
-  <span [class.active]="selectedCategory === 'escalade'">Escalade</span>
-</div>
+<div class="container" [ngClass]="selectedCategory">
+  <div class="labels">
+    <span [class.active]="selectedCategory === 'info'">Informatique</span>
+    <input
+      type="range"
+      min="0"
+      max="100"
+      [value]="sliderValue"
+      (input)="onSliderInput($event)"
+      (change)="onSliderChange($event)"
+      class="slider"
+    />
+    <span [class.active]="selectedCategory === 'escalade'">Escalade</span>
+  </div>
 
+  <div class="projets-list">
+    <app-project-card
+      *ngFor="let projet of projetsFiltres"
+      [type]="projet.type"
+      [titre]="projet.titre"
+      [description]="projet.description"
+      (click)="openProjet(projet)">
+    </app-project-card>
+  </div>
 
-<div class="projets-list">
-  <app-project-card
-    *ngFor="let projet of projetsFiltres"
-    [type]="projet.type"
-    [titre]="projet.titre"
-    [description]="projet.description"
-    (click)="openProjet(projet)">
-  </app-project-card>
-</div>
-
-<!-- Modale projet détaillé -->
-<div class="modal-backdrop" *ngIf="selectedProjet" (click)="closeProjet()"></div>
-<div class="modal" *ngIf="selectedProjet">
-  <button class="close-btn" (click)="closeProjet()">×</button>
-  <h2>{{ selectedProjet.titre }}</h2>
-  <p>{{ selectedProjet.details }}</p>
-  <div class="modal-images">
-    <img *ngFor="let img of selectedProjet.images" [src]="img" alt="Image projet" />
+  <!-- Modale projet détaillé -->
+  <div class="modal-backdrop" *ngIf="selectedProjet" (click)="closeProjet()"></div>
+  <div class="modal" *ngIf="selectedProjet">
+    <button class="close-btn" (click)="closeProjet()">×</button>
+    <h2>{{ selectedProjet.titre }}</h2>
+    <p>{{ selectedProjet.details }}</p>
+    <div class="modal-images">
+      <img *ngFor="let img of selectedProjet.images" [src]="img" alt="Image projet" />
+    </div>
   </div>
 </div>
