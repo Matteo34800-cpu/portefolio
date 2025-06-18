@@ -91,9 +91,7 @@
 
 @media (max-width: 600px) {
   .main-nav {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem 0.5rem;
+    flex-direction: row;
     border-radius: 0 0 18px 18px;
   }
   .main-nav a {
@@ -104,9 +102,7 @@
 
 @media (max-width: 700px) {
   .main-nav {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    flex-direction: row;
     font-size: 1rem;
   }
   .logo-link img {
