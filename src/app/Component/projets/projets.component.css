@@ -28,6 +28,7 @@
 .projets-list > div:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+  transition : background 3s ease-in-out;
   background: linear-gradient(135deg, #3a3a6b 0%, #23243a 100%);
 }
 

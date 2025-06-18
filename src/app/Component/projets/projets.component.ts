@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { CategoryService } from '../../category.service';
 import { CommonModule } from '@angular/common';
 import { Output, EventEmitter } from '@angular/core';
+import { ProjectCardComponent } from '../../project-card/project-card.component';
 @Component({
   selector: 'app-projets',
   templateUrl: './projets.component.html',
   styleUrls: ['./projets.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, ProjectCardComponent]
 })
 export class ProjetsComponent implements OnInit {
   projets: any[] = [];
@@ -20,11 +21,14 @@ export class ProjetsComponent implements OnInit {
   constructor(private http: HttpClient, private categoryService: CategoryService) {}
 
   ngOnInit() {
-    this.http.get<any[]>('assets/jsons/projets.json').subscribe(data => this.projets = data);
+    this.http.get<any[]>('assets/jsons/projets.json').subscribe(data => {
+      this.projets = data;
+    });
     this.categoryService.category$.subscribe(cat => this.selectedCategory = cat);
   }
 
   onSliderInput(event: Event) {
+    this.sliderValue = +(event.target as HTMLInputElement).value;
     this.selectedCategory = +(event.target as HTMLInputElement).value < 50 ? 'info' : 'escalade';
     this.categoryService.setCategory(this.selectedCategory);
   }

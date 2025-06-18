@@ -12,9 +12,12 @@
   <span [class.active]="selectedCategory === 'escalade'">Escalade</span>
 </div>
 
+
 <div class="projets-list">
-  <div *ngFor="let projet of projetsFiltres">
-    <h3>{{ projet.titre }}</h3>
-    <p>{{ projet.description }}</p>
-  </div>
+  <app-project-card
+    *ngFor="let projet of projetsFiltres"
+    [type]="projet.type"
+    [titre]="projet.titre"
+    [description]="projet.description">
+  </app-project-card>
 </div>
