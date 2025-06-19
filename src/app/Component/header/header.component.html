@@ -1,7 +1,11 @@
 <nav class="main-nav" [ngClass]="selectedCategory">
-  <a routerLink="/intro" routerLinkActive="active" class="logo-link">
-    <img src="assets/images/favicon-32x32.png" alt="Logo" class="logo">
-  </a>
+  <div class="logo-container">
+    <a routerLink="/intro" routerLinkActive="active" class="logo-link">
+      <img src="assets/images/favicon-32x32.png" alt="Logo" class="logo">
+    </a>
+    <span class="logo-text">Melandri Matteo</span>
+  </div>
+
   <button class="burger" (click)="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
