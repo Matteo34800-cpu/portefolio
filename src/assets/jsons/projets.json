@@ -1,21 +1,44 @@
 [
-  { "type": "info", "titre": "Portfolio", "description": "Site web personnel...", "images": ["assets/images/vscodePortefolio.png"], "details": "Ce projet est mon portfolio personnel réalisé en Angular. Il présente mes compétences, mes projets et mon parcours." },
-  { "type": "info", "titre": "Application de gestion de tâches", "description": "Application web..." },
-  { "type": "escalade", "titre": "Blog d'escalade", "description": "Site web..." },
-  { "type": "info", "titre": "Jeu de plateforme", "description": "Jeu vidéo..." },
-  { "type": "escalade", "titre": "Application de suivi d'entraînement", "description": "Application mobile..." },
-  { "type": "info", "titre": "Site de recettes", "description": "Site web..." },
-  { "type": "escalade", "titre": "Application de météo pour grimpeurs", "description": "Application mobile..." },
-  { "type": "info", "titre": "Portfolio d'artiste", "description": "Site web..." },
-  { "type": "escalade", "titre": "Guide des voies d'escalade", "description": "Application web..." },
-  { "type": "info", "titre": "Portfolio interactif", "description": "Site web..." },
-  { "type": "escalade", "titre": "Topo de falaise", "description": "Guide PDF..." },
-  { "type": "info", "titre": "Application de gestion de tâches", "description": "Application web..." },
-  { "type": "escalade", "titre": "Blog d'escalade", "description": "Site web..." },
-  { "type": "info", "titre": "Jeu de plateforme", "description": "Jeu vidéo..." },
-  { "type": "escalade", "titre": "Application de suivi d'entraînement", "description": "Application mobile..." },
-  { "type": "info", "titre": "Site de recettes", "description": "Site web..." },
-  { "type": "escalade", "titre": "Application de météo pour grimpeurs", "description": "Application mobile..." },
-  { "type": "info", "titre": "Portfolio d'artiste", "description": "Site web..." },
-  { "type": "escalade", "titre": "Guide des voies d'escalade", "description": "Application web..." }
+  {
+    "type": "info",
+    "titre": "Jeu 421 – SAE",
+    "description": "Projet universitaire de simulation du jeu de dés 421.",
+    "images": ["assets/images/SAE421.png"],
+    "details": "Ce projet a été réalisé dans le cadre d'une SAE. Il s'agissait de coder le jeu 421 avec des règles précises et différents modes de jeu (joueur contre joueur, joueur contre IA, IA contre IA), sans programmation orientée objet. L'inteligence des IA etaientt basée sur un calcul d'espérance de gain pour chaque action possible, permettant ainsi une stratégie optimale."
+  },
+  {
+    "type": "info",
+    "titre": "Projet Pokémon – SAE orientée objet",
+    "description": "Développement d'un système de combat de type Pokémon.",
+    "images": ["assets/images/SAEPOKEMON.png"],
+    "details": "Ce projet a permis de mettre en pratique la programmation orientée objet. Il comprend des classes représentant les Pokémon, les attaques, les dresseurs, ainsi qu’un moteur de combat. Il comprend aussi une interface graphique."
+  },
+  {
+    "type": "info",
+    "titre": "Portfolio personnel",
+    "description": "Développement de mon site web avec Angular.",
+    "images": ["assets/images/vscodePortefolio.png"],
+    "details": "Ce site web dynamique a été réalisé avec Angular. Il présente mes projets, mes compétences, tout ca pour mes deux passions, l'informatique et l'escalade."
+  },
+  {
+    "type": "info",
+    "titre": "Mise en place d’un serveur complet",
+    "description": "Configuration d’une infrastructure web complète.",
+    "images": ["assets/images/serveurApachephp.png"],
+    "details": "Installation et configuration d’un serveur MySQL, d’un serveur Apache et d’un serveur mail. Les serveurs ont été mis en réseau pour permettre une communication fluide entre bases de données, hébergement web et gestion des courriels."
+  },
+  {
+    "type": "escalade",
+    "titre": "Enseignement de l’escalade",
+    "description": "Cours hebdomadaires d'escalade donnés aux jeunes du club.",
+    "images": ["assets/images/EscaladeSortie.jpg"],
+    "details": "Je suis professeur d'escalade et j'encadre des cours chaque mardi. Je transmets ma passion pour la grimpe en accompagnant les élèves dans leur progression, aussi bien en salle qu'en extérieur. Je suis diplômé d'état d'escalade, ce qui me permet de proposer des cours bénévoles adaptés à tous les niveaux."
+  },
+  {
+    "type": "escalade",
+    "titre": "Occitechnik",
+    "description": "Participation à l’événement Occitechnik.",
+    "images": ["assets/images/Occitecnik.jpg"],
+    "details": "J’ai participé à l’événement Occitechnik, qui mêle sport, technologie et démonstrations techniques. Une occasion de partager mon expérience en escalade et de découvrir des innovations dans le domaine."
+  }
 ]

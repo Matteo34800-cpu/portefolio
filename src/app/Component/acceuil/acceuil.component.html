@@ -1,4 +1,3 @@
-
 <div class="split-bg">
   <div class="split split-info" [style.width.%]="100 - sliderValue"></div>
   <div class="split split-escalade" [style.width.%]="sliderValue"></div>
@@ -7,19 +6,27 @@
 <div class="split-content">
   <div class="labels">
     <span [class.active]="selectedCategory === 'info'">Informatique</span>
-    <input type="range" min="0" max="100" [value]="sliderValue"
-      (input)="onSliderInput($event)" (change)="onSliderChange($event)" class="slider" />
+    <input type="range" min="0" max="100" [value]="sliderValue" (input)="onSliderInput($event)"
+      (change)="onSliderChange($event)" class="slider" />
     <span [class.active]="selectedCategory === 'escalade'">Escalade</span>
   </div>
   <div class="content-wrapper">
     <div class="content info" *ngIf="selectedCategory === 'info'">
       <h2>Ma vie dans l'Informatique</h2>
-      <p>{{ bioInfo }}</p>
+      <div class ="bio-container">
+        <p>{{ bioInfo }}</p>
+        <img src="assets/images/randoMonsChloe.jpg" alt="" class="programming-image">
+      </div>
     </div>
     <div class="content escalade" *ngIf="selectedCategory === 'escalade'">
-          <img src="assets/images/245208442-vector-illustration-of-a-man-climbing-on-a-cliff-climbing-concept-removebg-preview.svg" alt="" class="climbing-image">
+      <img
+        src="assets/images/245208442-vector-illustration-of-a-man-climbing-on-a-cliff-climbing-concept-removebg-preview.svg"
+        alt="" class="climbing-image">
       <h2>Ma vie dans l'Escalade</h2>
+      <div class="bio-container">
       <p>{{ bioEscalade }}</p>
+      <img src="assets/images/Occitecnikportraitgorges.jpg" alt="" class="programming-image">
+      </div>
     </div>
   </div>
 </div>

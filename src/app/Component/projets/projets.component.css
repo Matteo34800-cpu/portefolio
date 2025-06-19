@@ -247,3 +247,12 @@ img:hover {
   justify-content: center;
   width: 100%;
 }
+.modal.info {
+  background: linear-gradient(135deg, #23243a 0%, #3a3a6b 100%);
+  color: #fff;
+}
+
+.modal.escalade {
+  background: linear-gradient(135deg, #1ed760 0%, #0e7c3a 100%);
+  color: #fff;
+}

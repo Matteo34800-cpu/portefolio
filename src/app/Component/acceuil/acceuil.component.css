@@ -262,3 +262,15 @@ li {
     padding-top: 70px;
   }
 }
+.programming-image {
+
+  height: 20rem; /* ajuste la taille */
+  z-index: 30000; /* plus grand que le header */
+  pointer-events: none;
+}
+.bio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}

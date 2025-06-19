@@ -25,7 +25,7 @@
 
   <!-- Modale projet détaillé -->
   <div class="modal-backdrop" *ngIf="selectedProjet" (click)="closeProjet()"></div>
-  <div class="modal" *ngIf="selectedProjet">
+  <div class="modal" *ngIf="selectedProjet" [ngClass]="selectedProjet.type">
     <button class="close-btn" (click)="closeProjet()">×</button>
     <h2>{{ selectedProjet.titre }}</h2>
     <p>{{ selectedProjet.details }}</p>
