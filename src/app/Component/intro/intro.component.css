@@ -23,6 +23,11 @@ html {
   transition: all 0.3s ease-in-out;
   background: radial-gradient( circle at center,rgba(4, 97, 44, 0.737) 0%, rgb(14, 114, 49) 100%, rgb(15, 129, 66) 100% );
   }
+  text-shadow:
+      0 0 5px rgb(24, 237, 5),
+      0 0 10px rgb(20, 216, 20),
+      0 0 20px rgb(131, 244, 118),
+      0 0 40px rgb(0, 0, 255);
 }
 
 #textButton{
