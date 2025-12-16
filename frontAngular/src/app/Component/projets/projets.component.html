@@ -1,36 +1,41 @@
 <div class="container" [ngClass]="selectedCategory">
   <div class="labels">
-    <span [class.active]="selectedCategory === 'info'">Informatique</span>
-    <input
-      type="range"
-      min="0"
-      max="100"
-      [value]="sliderValue"
-      (input)="onSliderInput($event)"
-      (change)="onSliderChange($event)"
-      class="slider"
-    />
-    <span [class.active]="selectedCategory === 'escalade'">Escalade</span>
+    <span [class.active]="selectedCategory === 'info'">Projet Professionel</span>
+    <input type="range" min="0" max="100" [value]="sliderValue" (input)="onSliderInput($event)"
+      (change)="onSliderChange($event)" class="slider" />
+    <span [class.active]="selectedCategory === 'escalade'">Projet personnel</span>
   </div>
 
   <div class="projets-list">
-    <app-project-card
-      *ngFor="let projet of projetsFiltres"
-      [type]="projet.type"
-      [titre]="projet.titre"
-      [description]="projet.description"
-      (click)="openProjet(projet)">
+    <app-project-card *ngFor="let projet of projetsFiltres" [type]="projet.type" [titre]="projet.titre"
+      [description]="projet.description" (click)="openProjet(projet)">
     </app-project-card>
   </div>
 
   <!-- Modale projet détaillé -->
-  <div class="modal-backdrop" *ngIf="selectedProjet" (click)="closeProjet()"></div>
-  <div class="modal" *ngIf="selectedProjet" [ngClass]="selectedProjet.type">
+  @if (selectedProjet) {
+  <div class="modal-backdrop" (click)="closeProjet()"></div>
+  <div class="modal" [ngClass]="selectedProjet.type">
     <button class="close-btn" (click)="closeProjet()">×</button>
     <h2>{{ selectedProjet.titre }}</h2>
+    <h3>Description : </h3>
     <p>{{ selectedProjet.details }}</p>
+    <h3>Languages travaillés</h3>
+    @if (selectedProjet.type == "info") {
+      <div class="list">
+        <ul>
+          @for (langage of selectedProjetLangage; track $index) {
+          <li>{{langage}}</li>
+          }
+        </ul>
+      </div>
+    }
+
+
     <div class="modal-images">
       <img *ngFor="let img of selectedProjet.images" [src]="img" alt="Image projet" />
     </div>
   </div>
+  }
+
 </div>

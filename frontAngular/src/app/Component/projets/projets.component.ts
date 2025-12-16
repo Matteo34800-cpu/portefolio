@@ -17,6 +17,7 @@ export class ProjetsComponent implements OnInit {
   @Output() CategoryChange = new EventEmitter<String>();
   sliderValue = 0;
   selectedProjet: any = null;
+  selectedProjetLangage : any=null;
 
 
   constructor(private http: HttpClient, private categoryService: CategoryService) { }
@@ -52,9 +53,11 @@ export class ProjetsComponent implements OnInit {
 
   openProjet(projet: any) {
     this.selectedProjet = projet;
+    this.selectedProjetLangage = this.selectedProjet.langages
   }
 
   closeProjet() {
     this.selectedProjet = null;
-  }
+    this.selectedProjetLangage = null;
+  }   
 }

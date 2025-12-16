@@ -4,6 +4,7 @@
     "titre": "Jeu 421 – SAE",
     "description": "Projet universitaire de simulation du jeu de dés 421.",
     "images": ["assets/images/SAE421.png"],
+    "langages": ["Java"],
     "details": "Ce projet a été réalisé dans le cadre d'une SAE. Il s'agissait de coder le jeu 421 avec des règles précises et différents modes de jeu (joueur contre joueur, joueur contre IA, IA contre IA), sans programmation orientée objet. L'inteligence des IA etaientt basée sur un calcul d'espérance de gain pour chaque action possible, permettant ainsi une stratégie optimale."
   },
   {
@@ -11,6 +12,7 @@
     "titre": "Projet Pokémon – SAE orientée objet",
     "description": "Développement d'un système de combat de type Pokémon.",
     "images": ["assets/images/SAEPOKEMON.png"],
+    "langages": ["Java","JavaFX","FXML"],
     "details": "Ce projet a permis de mettre en pratique la programmation orientée objet. Il comprend des classes représentant les Pokémon, les attaques, les dresseurs, ainsi qu’un moteur de combat. Il comprend aussi une interface graphique."
   },
   {
@@ -18,6 +20,7 @@
     "titre": "Portfolio personnel",
     "description": "Développement de mon site web avec Angular.",
     "images": ["assets/images/vscodePortefolio.png"],
+    "langages": ["TypeScript","HTML","CSS","json"],
     "details": "Ce site web dynamique a été réalisé avec Angular. Il présente mes projets, mes compétences, tout ca pour mes deux passions, l'informatique et l'escalade."
   },
   {
@@ -25,6 +28,7 @@
     "titre": "Mise en place d’un serveur complet",
     "description": "Configuration d’une infrastructure web complète.",
     "images": ["assets/images/serveurApachephp.png"],
+    "langages": ["bash"],
     "details": "Installation et configuration d’un serveur MySQL, d’un serveur Apache et d’un serveur mail. Les serveurs ont été mis en réseau pour permettre une communication fluide entre bases de données, hébergement web et gestion des courriels."
   },
   {

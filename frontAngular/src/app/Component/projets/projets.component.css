@@ -1,3 +1,4 @@
+
 /* Conteneur principal */
 .projets-list {
   display: flex;
@@ -155,9 +156,8 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 90vw;
-  max-width: 600px;
-  max-height: 90vh;
+  width: 75%;
+  height: 60%;
   overflow-y: auto;
   background: #23243a;
   color: #fff;
@@ -255,4 +255,50 @@ img:hover {
 .modal.escalade {
   background: linear-gradient(135deg, #1ed760 0%, #0e7c3a 100%);
   color: #fff;
+}
+/* Container principal */
+.list {
+  display:flex;
+  justify-content: flex-start;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #8e8eeb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  width: fit-content;
+}
+
+/* Liste sans puces et en grille */
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 12px;
+}
+
+/* Chaque langage = badge */
+.list li {
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.05);
+  font-weight: 600;
+  color: #111827;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+/* Responsive : sur petit écran une colonne */
+@media (max-width: 420px) {
+  .list ul {
+    grid-template-columns: 1fr;
+  }
 }
