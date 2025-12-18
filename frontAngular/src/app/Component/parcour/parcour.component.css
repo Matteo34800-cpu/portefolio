@@ -4,6 +4,7 @@
   background: #0d1117;
   min-height: 100vh;
   font-family: 'Monaco', 'Courier New', monospace;
+  margin-top: 19px;
 }
 
 .loading,

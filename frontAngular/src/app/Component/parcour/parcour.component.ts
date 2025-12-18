@@ -28,6 +28,7 @@ export class ParcourComponent implements OnInit {
     this.http.get<ParcourStep[]>('/assets/jsons/parcours.json').subscribe({
       next: data => {
         this.steps = data || [];
+        this.steps.sort((a, b) => b.id - a.id);
         this.loading = false;
       },
       error: (err) => {

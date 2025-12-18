@@ -7,9 +7,14 @@
   </div>
 
   <div class="projets-list">
-    <app-project-card *ngFor="let projet of projetsFiltres" [type]="projet.type" [titre]="projet.titre"
-      [description]="projet.description" (click)="openProjet(projet)">
+    @for (projet of projetsFiltres; track $index) {
+    <app-project-card  [type]="projet.type"
+     [annee]="projet.annee"
+     [titre] = "projet.titre"
+     [description]="projet.description"
+     (click)="openProjet(projet)">
     </app-project-card>
+    }
   </div>
 
   <!-- Modale projet détaillé -->

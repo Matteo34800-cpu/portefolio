@@ -1,6 +1,7 @@
 [
   {
     "type": "info",
+    "annee": "2024",
     "titre": "Jeu 421 – SAE",
     "description": "Projet universitaire de simulation du jeu de dés 421.",
     "images": ["assets/images/SAE421.png"],
@@ -9,6 +10,7 @@
   },
   {
     "type": "info",
+    "annee": "2025",
     "titre": "Projet Pokémon – SAE orientée objet",
     "description": "Développement d'un système de combat de type Pokémon.",
     "images": ["assets/images/SAEPOKEMON.png"],
@@ -25,6 +27,7 @@
   },
   {
     "type": "info",
+    "annee": "2025",
     "titre": "Mise en place d’un serveur complet",
     "description": "Configuration d’une infrastructure web complète.",
     "images": ["assets/images/serveurApachephp.png"],
@@ -32,7 +35,21 @@
     "details": "Installation et configuration d’un serveur MySQL, d’un serveur Apache et d’un serveur mail. Les serveurs ont été mis en réseau pour permettre une communication fluide entre bases de données, hébergement web et gestion des courriels."
   },
   {
+  "type": "info",
+  "annee": "2025-2026",
+  "titre": "Démocr@ – Plateforme de questions/réponses",
+  "description": "Application web pédagogique de type forum Q/R et votes pour apprendre le développement web PHP/MySQL avec architecture MVC complète.",
+  "images": ["assets/images/democrat.png"],
+  "langages": [
+    "php",
+    "sql",
+    "html",
+    "css"],
+  "details": "Démocr@ est une application web de démocratie participative simulé. Elle permet de créer des questions, d’y répondre, de voter, et de gérer des utilisateurs, en s’appuyant sur une architecture PHP MVC (contrôleur frontal, contrôleurs spécialisés, modèles et vues) connectée à une base de données MySQL pour stocker questions, réponses, utilisateurs et votes. Le projet sert de support de TP pour le module de développement web, afin de pratiquer le modèle MVC, le routage par paramètres d’URL (action, controleur), les opérations CRUD complètes et la sécurisation des accès dans un contexte réaliste d’application PHP/MySQL."
+},
+  {
     "type": "escalade",
+    "annee": "2024-2025",
     "titre": "Enseignement de l’escalade",
     "description": "Cours hebdomadaires d'escalade donnés aux jeunes du club.",
     "images": ["assets/images/EscaladeSortie.jpg"],
@@ -40,6 +57,7 @@
   },
   {
     "type": "escalade",
+    "annee": "2025",
     "titre": "Occitechnik",
     "description": "Participation à l’événement Occitechnik.",
     "images": ["assets/images/Occitecnik.jpg"],

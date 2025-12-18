@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "title": "Baccalauréat",
+  "title": "Baccalauréat STI2D",
     "year": "2020",
-    "description": "Baccalauréat général",
+    "description": "Baccalauréat Sciences et Technologies de l'Industrie et du Développement Durable",
     "parent": null
   },
   {
     "id": 2,
     "title": "BUT Informatique",
     "year": "2023",
-    "description": "Diplôme universitaire de technologie",
+    "description": "Diplôme universitaire d'informatique'",
     "parent": 1
   },
   {

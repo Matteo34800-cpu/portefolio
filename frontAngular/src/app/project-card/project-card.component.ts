@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ProjectCardComponent {
   @Input() type!: 'info' | 'escalade';
+  @Input() annee!: string;
   @Input() titre!: string;
   @Input() description!: string;
 }
