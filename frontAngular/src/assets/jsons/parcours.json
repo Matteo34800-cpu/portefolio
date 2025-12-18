@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Baccalauréat",
+    "year": "2020",
+    "description": "Baccalauréat général",
+    "parent": null
+  },
+  {
+    "id": 2,
+    "title": "BUT Informatique",
+    "year": "2023",
+    "description": "Diplôme universitaire de technologie",
+    "parent": 1
+  },
+  {
+    "id": 3,
+    "title": "Alternance INRAE",
+    "year": "2024",
+    "description": "Développeur en alternance",
+    "parent": 2
+  }
+]

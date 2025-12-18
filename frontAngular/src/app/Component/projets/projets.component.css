@@ -1,5 +1,9 @@
 
 /* Conteneur principal */
+
+p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 .projets-list {
   display: flex;
   flex-wrap: wrap;

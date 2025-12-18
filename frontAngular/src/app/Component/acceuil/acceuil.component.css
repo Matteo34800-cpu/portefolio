@@ -232,6 +232,7 @@ li {
   width: auto;
   margin: 10px;    /* un peu d’espace depuis le bord */
   z-index: 1000;   /* pour être devant tout */
+  border-radius: 3px;
 }
 .content.escalade{
   background: linear-gradient(to bottom, #e6f2e6, #b7cbb0); /* vert très clair vers vert feuille doux */
@@ -267,10 +268,16 @@ li {
   height: 20rem; /* ajuste la taille */
   z-index: 30000; /* plus grand que le header */
   pointer-events: none;
+  border-radius: 3px;
 }
 .bio-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+}
+
+.textDescription{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
 }

@@ -1,3 +1,6 @@
+p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 .project-card {
   background: linear-gradient(135deg, #23243a 0%, #3a3a6b 100%);
   color: #fff;

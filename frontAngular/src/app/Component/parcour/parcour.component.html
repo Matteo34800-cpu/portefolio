@@ -1,0 +1,18 @@
+<div class="parcours-container">
+  <div *ngIf="loading" class="loading">Chargement du parcours...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="!loading && !error" class="tree">
+    <div class="tree-root">
+      <div *ngFor="let step of steps" class="tree-branch">
+        <div class="node" [attr.data-id]="step.id">
+          <div class="node-content">
+            <h3>{{ step.title }}</h3>
+            <p class="year">{{ step.year }}</p>
+            <p class="description">{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
