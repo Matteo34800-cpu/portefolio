@@ -1,153 +1,314 @@
-.contact-container {
-  max-width: 420px;
-  margin: 3rem auto;
-  padding: 2rem 1.5rem;
-  background: linear-gradient(135deg, #23243a 0%, #3a3a6b 100%);
-  color: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.12);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-h1 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  letter-spacing: 1px;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-.contact-card {
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.contact-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
+    .container.info {
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #1e1e2f, #2e2e3e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
 
-.contact-label {
-  font-weight: 600;
-  color: #07ad2b;
-}
+    .contact-container {
+      max-width: 650px;
+      width: 100%;
+      background: linear-gradient(135deg, #23243a 0%, #3a3a6b 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px rgba(44, 62, 80, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      animation: slideUp 0.6s ease-out;
+    }
 
-.contact-value {
-  color: #fff;
-  text-decoration: none;
-}
+    h1 {
+      margin: 0 0 1.5rem 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      text-align: center;
+      font-weight: 800;
+      background: linear-gradient(135deg, #2196f3, #a371f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-.contact-value:hover {
-  text-decoration: underline;
-}
+    .contact-card {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
 
-.contact-socials {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1.5rem;
-}
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.3rem;
+      margin-bottom: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 0.6s ease-out backwards;
+    }
 
-.contact-socials a {
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s;
-}
+    .contact-row:nth-child(1) { animation-delay: 0.1s; }
+    .contact-row:nth-child(2) { animation-delay: 0.2s; }
+    .contact-row:nth-child(3) { animation-delay: 0.3s; }
 
+    .contact-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.6s ease;
+      z-index: 1;
+    }
 
+    .contact-row:hover::before {
+      left: 100%;
+    }
 
-.linkedin-btn {
-  background: #0077b5;
-  color: #fff;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 119, 181, 0.1);
-  transition: background 0.2s, color 0.2s;
-  display: inline-block;
-}
+    .contact-row:hover {
+      transform: translateY(-5px) scale(1.02);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 24px rgba(44, 62, 80, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
 
-.linkedin-btn:hover {
-  background: #005983;
-  color: #fff;
-}
+    .icon-box {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(33, 150, 243, 0.2), rgba(163, 113, 247, 0.2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 2;
+    }
 
-@media (max-width: 600px) {
-  .contact-container {
-    padding: 1rem 0.5rem;
-  }
-  .contact-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
-  }
-}
+    .contact-info {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
 
-.container.info {
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #1e1e2f, #2e2e3e);
-  color: #fff;
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
+    .contact-label {
+      font-size: 0.85rem;
+      color: #a0a0ff;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: block;
+    }
 
-.github-btn {
-  background: #1c1f20;
-  color: #fff;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 119, 181, 0.1);
-  transition: background 0.2s, color 0.2s;
-  display: inline-block;
-}
+    .contact-value {
+      font-size: 1.05rem;
+      color: #d0d0d0;
+      font-weight: 600;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s ease;
+    }
 
-.github-btn:hover {
-  background: #050708;
-  color: #fff;
-}
+    .contact-value:hover {
+      color: #fff;
+    }
 
-.cv-buttons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
+    .contact-socials {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
 
-.cv-btn {
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  font-size: 1rem;
-  cursor: pointer;
-}
+    .linkedin-btn,
+    .github-btn {
+      flex: 1;
+      min-width: 200px;
+      padding: 1.3rem;
+      border-radius: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 0.6s ease-out backwards;
+    }
 
-.cv-fr {
-  background: linear-gradient(135deg, #2196f3, #1976d2);
-  color: #fff;
-}
+    .linkedin-btn {
+      background: linear-gradient(135deg, #0077b5, #005983);
+      animation-delay: 0.4s;
+    }
 
-.cv-fr:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
-  background: linear-gradient(135deg, #1976d2, #1565c0);
-}
+    .github-btn {
+      background: linear-gradient(135deg, #1c1f20, #050708);
+      animation-delay: 0.5s;
+    }
 
-.cv-en {
-  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-  color: #fff;
-}
+    .linkedin-btn::before,
+    .github-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      transition: left 0.6s ease;
+      z-index: 1;
+    }
 
-.cv-en:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
-  background: linear-gradient(135deg, #ee5a52, #e53935);
-}
+    .linkedin-btn:hover::before,
+    .github-btn:hover::before {
+      left: 100%;
+    }
+
+    .linkedin-btn:hover,
+    .github-btn:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 16px 40px rgba(44, 62, 80, 0.3);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .linkedin-btn span,
+    .github-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cv-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cv-btn {
+      flex: 1;
+      min-width: 200px;
+      padding: 1.3rem;
+      border-radius: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 0.6s ease-out backwards;
+    }
+
+    .cv-fr {
+      background: linear-gradient(135deg, #2196f3, #1976d2);
+      border-color: rgba(33, 150, 243, 0.3);
+      animation-delay: 0.6s;
+    }
+
+    .cv-en {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+      border-color: rgba(255, 107, 107, 0.3);
+      animation-delay: 0.7s;
+    }
+
+    .cv-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      transition: left 0.6s ease;
+      z-index: 1;
+    }
+
+    .cv-btn:hover::before {
+      left: 100%;
+    }
+
+    .cv-btn:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 16px 40px rgba(44, 62, 80, 0.3);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cv-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 900px) {
+      .contact-container {
+        padding: 2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-container {
+        padding: 1.5rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1rem;
+      }
+
+      .linkedin-btn,
+      .github-btn,
+      .cv-btn {
+        min-width: 100%;
+      }
+    }

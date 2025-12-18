@@ -47,6 +47,20 @@
     "css"],
   "details": "Démocr@ est une application web de démocratie participative simulé. Elle permet de créer des questions, d’y répondre, de voter, et de gérer des utilisateurs, en s’appuyant sur une architecture PHP MVC (contrôleur frontal, contrôleurs spécialisés, modèles et vues) connectée à une base de données MySQL pour stocker questions, réponses, utilisateurs et votes. Le projet sert de support de TP pour le module de développement web, afin de pratiquer le modèle MVC, le routage par paramètres d’URL (action, controleur), les opérations CRUD complètes et la sécurisation des accès dans un contexte réaliste d’application PHP/MySQL."
 },
+{
+  "type": "info",
+  "annee": "2026",
+  "titre": "Nuit de l’info 2026",
+  "description": "Participation à la Nuit de l'Info, le thème visait a promouvoir l'utilisation et le développement d'outils opensource.",
+  "images": ["assets/images/NDI-2025-70.jpg"],
+  "langages": [
+    "Ollama (LLM)",
+    "REACT",
+    "JS",
+    "HTML/CSS"],
+  "details": "Lors de la Nuit de l'Info 2026, notre équipe a choisi de développer une application web visant à sensibiliser les utilisateurs à l'importance des logiciels libres et open source. Nous avons utilisé Ollama pour intégrer un modèle de langage capable de répondre aux questions des utilisateurs sur les avantages des logiciels open source. L'application a été construite avec REACT pour une interface utilisateur dynamique et réactive. "
+
+},
   {
     "type": "escalade",
     "annee": "2024-2025",
