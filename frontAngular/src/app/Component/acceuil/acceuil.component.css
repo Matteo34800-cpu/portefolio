@@ -143,6 +143,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       animation: slideUp 0.6s ease-out;
+      margin-top: 100px;
     }
 
     .labels span {
@@ -480,7 +481,8 @@
   filter: brightness(0.5) blur(2px);
 }
 
-.content.info > *:not(.background-collage) {
+/* Ne s'applique QUE aux enfants directs de .content.info, pas à .split-content.info */
+.content-wrapper .content.info > *:not(.background-collage) {
   position: relative;
   z-index: 1;
 }

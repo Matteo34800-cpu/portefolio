@@ -3,32 +3,37 @@
   <div class="split split-escalade" [style.width.%]="sliderValue"></div>
 </div>
 
-<div class="split-content" [ngClass]="selectedCategory">
-  <div class="labels">
-    <span [class.active]="selectedCategory === 'info'">Projet professionnel</span>
-    <input type="range" min="0" max="100" [value]="sliderValue" (input)="onSliderInput($event)"
-      (change)="onSliderChange($event)" class="slider" />
-    <span [class.active]="selectedCategory === 'escalade'">Projet personnel</span>
-  </div>
+  <div class="labels" >
+  <span 
+    [class.active]="selectedCategory === 'info'"
+    (click)="toggleCategory('info')">
+    Projet professionnel
+  </span>
+  
+  <input 
+    type="range" 
+    class="slider" 
+    min="0" 
+    max="100" 
+    [value]="sliderValue"
+    (input)="onSliderInput($event)"
+    (change)="onSliderChange($event)"
+  />
+  
+  <span 
+    [class.active]="selectedCategory === 'escalade'"
+    (click)="toggleCategory('escalade')">
+    Projet personnel
+  </span>
+</div>
   
   <div class="content-wrapper">
     @if(selectedCategory === 'info') {
-     <div class="split-bg">
-    <div class="split split-info" style="width: 100%;"></div>
-    <div class="split split-escalade" style="width: 0%;"></div>
-  </div>
+     
 
   <!-- Contenu principal -->
-  <div class="split-content">
-    <!-- Slider avec labels -->
-    <div class="labels">
-      <span class="active">Projet professionnel</span>
-      <input type="range" min="0" max="100" value="0" class="slider" />
-      <span>Projet personnel</span>
-    </div>
-
+  
     <!-- Contenu Info -->
-    <div class="content-wrapper">
       <div class="content info">
         <h2>💻 Ma vie dans l'Informatique</h2>
         
@@ -44,16 +49,22 @@
         <!-- Stats cards -->
         <div class="stats-container">
           <div class="stat-card">
+          <a routerLink="/parcour" routerLinkActive="active">
             <div class="stat-value">2+</div>
             <div class="stat-label">Ans d'expérience</div>
+          </a>
           </div>
-          <div class="stat-card">
-            <div class="stat-value">10+</div>
+          <div class="stat-card"  >
+            <a routerLink="/parcour" routerLinkActive="active">
+            <div class="stat-value">5+</div>
             <div class="stat-label">Projets réalisés</div>
+            </a>
           </div>
           <div class="stat-card">
+          <a routerLink="/parcour" routerLinkActive="active">
             <div class="stat-value">5+</div>
             <div class="stat-label">Technologies</div>
+          </a>
           </div>
         </div>
 
@@ -66,13 +77,10 @@
           <span class="badge tech">🚀 Full Stack</span>
         </div>
       </div>
-    </div>
-  </div>
 
 
     }
     @else {
-    <div class="content-wrapper">
     <div class="content escalade">
       <img src="assets/images/climber.svg" alt="Climber" class="climbing-image" loading="lazy">
       
@@ -110,7 +118,5 @@
         <span class="badge sport">❤️ Transmission</span>
       </div>
     </div>
-  </div>
     }
   </div>
-</div>
