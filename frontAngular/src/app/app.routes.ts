@@ -3,7 +3,7 @@ import { AccueilComponent } from './Component/acceuil/acceuil.component';
 import { AppComponent } from './app.component';
 import { IntroComponent } from './Component/intro/intro.component';
 import { animation } from '@angular/animations';
-import { ProjetsComponent } from './Component/projets/projets.component';
+import { ProjetsComponent } from './Component/projectListComponents/projets/projets.component';
 import { ContactComponent } from './Component/contact/contact.component';
 import { ParcourComponent } from './Component/parcour/parcour.component';
 export const routes: Routes = [
