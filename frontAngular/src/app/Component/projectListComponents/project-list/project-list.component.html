@@ -1,0 +1,10 @@
+<div class="projets-list">
+  @for (projet of projets; track $index) {
+    <app-project-card  [type]="projet.type"
+      [annee]="projet.annee"
+      [titre] = "projet.titre"
+      [description]="projet.description"
+      (click)="onProjetClick(projet)">
+    </app-project-card>
+  }
+</div>

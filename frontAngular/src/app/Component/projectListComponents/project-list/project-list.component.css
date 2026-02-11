@@ -1,0 +1,106 @@
+/* ===== LISTE DES PROJETS ===== */
+.projets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  height: auto;
+}
+
+/* Cartes projet */
+.projets-list > div {
+  background: linear-gradient(135deg, #23243a 0%, #3a3a6b 100%);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.12);
+  padding: 2rem 1.5rem;
+  width: 320px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.projets-list > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.projets-list > div:hover::before {
+  left: 100%;
+}
+
+.projets-list > div:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(44, 62, 80, 0.25);
+  background: linear-gradient(135deg, #3a3a6b 0%, #23243a 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.projets-list h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #ffffff;
+  text-transform: none;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.projets-list p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #d0d0d0;
+  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .projets-list {
+    gap: 1rem;
+  }
+
+  .projets-list > div {
+    width: 90vw;
+    min-width: 0;
+    padding: 1.2rem 1rem;
+  }
+
+  .projets-list h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .projets-list > div h3 {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .projets-list > div {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .projets-list h3 {
+    font-size: 1.1rem;
+  }
+}

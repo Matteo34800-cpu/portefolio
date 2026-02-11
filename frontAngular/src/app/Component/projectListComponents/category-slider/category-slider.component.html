@@ -1,0 +1,6 @@
+<div class="labels">
+  <span [class.active]="selectedCategory === 'info'">Projet Professionel</span>
+  <input type="range" min="0" max="100" [value]="sliderValue" (input)="onSliderInput($event)"
+    (change)="onSliderChange($event)" class="slider" />
+  <span [class.active]="selectedCategory === 'escalade'">Projet personnel</span>
+</div>

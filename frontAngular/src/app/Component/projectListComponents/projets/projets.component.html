@@ -1,0 +1,16 @@
+<div class="container" [ngClass]="selectedCategory">
+  <app-category-slider
+    [selectedCategory]="selectedCategory"
+    (categoryChange)="onCategoryChange($event)">
+  </app-category-slider>
+
+  <app-project-list
+    [projets]="projetsFiltres"
+    (projetClick)="onProjetClick($event)">
+  </app-project-list>
+
+  <app-project-modal
+    [selectedProjet]="selectedProjet"
+    (closeModal)="onCloseModal()">
+  </app-project-modal>
+</div>

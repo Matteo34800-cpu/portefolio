@@ -1,0 +1,26 @@
+<!-- Modale projet détaillé -->
+@if (selectedProjet) {
+  <div class="modal-backdrop" (click)="onClose()"></div>
+  <div class="modal" [ngClass]="selectedProjet.type">
+    <button class="close-btn" (click)="onClose()">×</button>
+    <h2>{{ selectedProjet.titre }}</h2>
+    <h3>Description : </h3>
+    <p >{{ selectedProjet.details }}</p>
+    <h3>Languages travaillés</h3>
+    @if (selectedProjet.type == "info") {
+      <div class="list">
+        <ul>
+          @for (langage of selectedProjetLangage; track $index) {
+            <li>{{langage}}</li>
+          }
+        </ul>
+      </div>
+    }
+
+    <div class="modal-images">
+      @for (img of selectedProjet.images; track img) {
+        <img [src]="img" alt="Image projet" />
+      }
+    </div>
+  </div>
+}

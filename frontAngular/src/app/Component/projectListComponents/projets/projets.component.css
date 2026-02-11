@@ -1,0 +1,30 @@
+/* Typographie générale */
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== CONTENEUR PRINCIPAL ===== */
+.container {
+  transition: background 0.5s ease-in-out;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 90px;
+  box-sizing: border-box;
+}
+
+.container.info {
+  background: linear-gradient(to bottom, #1e1e2f, #2e2e3e);
+  color: #fff;
+}
+
+.container.escalade {
+  background: linear-gradient(to bottom, #e0f7e9, #b2dfdb);
+  color: #2d3a2d;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .container {
+    padding-top: 70px;
+  }
+}
