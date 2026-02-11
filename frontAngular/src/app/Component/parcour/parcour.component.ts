@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { HttpClient } from '@angular/common/http';
 
 interface ParcourStep {
@@ -13,7 +13,7 @@ interface ParcourStep {
 @Component({
   selector: 'app-parcour',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './parcour.component.html',
   styleUrl: './parcour.component.css'
 })

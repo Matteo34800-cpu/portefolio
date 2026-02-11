@@ -3,44 +3,46 @@
     <span [class.active]="selectedCategory === 'info'">Projet Professionel</span>
     <input type="range" min="0" max="100" [value]="sliderValue" (input)="onSliderInput($event)"
       (change)="onSliderChange($event)" class="slider" />
-    <span [class.active]="selectedCategory === 'escalade'">Projet personnel</span>
-  </div>
+      <span [class.active]="selectedCategory === 'escalade'">Projet personnel</span>
+    </div>
 
-  <div class="projets-list">
-    @for (projet of projetsFiltres; track $index) {
-    <app-project-card  [type]="projet.type"
-     [annee]="projet.annee"
-     [titre] = "projet.titre"
-     [description]="projet.description"
-     (click)="openProjet(projet)">
-    </app-project-card>
-    }
-  </div>
+    <div class="projets-list">
+      @for (projet of projetsFiltres; track $index) {
+        <app-project-card  [type]="projet.type"
+          [annee]="projet.annee"
+          [titre] = "projet.titre"
+          [description]="projet.description"
+          (click)="openProjet(projet)">
+        </app-project-card>
+      }
+    </div>
 
-  <!-- Modale projet détaillé -->
-  @if (selectedProjet) {
-  <div class="modal-backdrop" (click)="closeProjet()"></div>
-  <div class="modal" [ngClass]="selectedProjet.type">
-    <button class="close-btn" (click)="closeProjet()">×</button>
-    <h2>{{ selectedProjet.titre }}</h2>
-    <h3>Description : </h3>
-    <p >{{ selectedProjet.details }}</p>
-    <h3>Languages travaillés</h3>
-    @if (selectedProjet.type == "info") {
-      <div class="list">
-        <ul>
-          @for (langage of selectedProjetLangage; track $index) {
-          <li>{{langage}}</li>
+    <!-- Modale projet détaillé -->
+    @if (selectedProjet) {
+      <div class="modal-backdrop" (click)="closeProjet()"></div>
+      <div class="modal" [ngClass]="selectedProjet.type">
+        <button class="close-btn" (click)="closeProjet()">×</button>
+        <h2>{{ selectedProjet.titre }}</h2>
+        <h3>Description : </h3>
+        <p >{{ selectedProjet.details }}</p>
+        <h3>Languages travaillés</h3>
+        @if (selectedProjet.type == "info") {
+          <div class="list">
+            <ul>
+              @for (langage of selectedProjetLangage; track $index) {
+                <li>{{langage}}</li>
+              }
+            </ul>
+          </div>
+        }
+
+
+        <div class="modal-images">
+          @for (img of selectedProjet.images; track img) {
+            <img [src]="img" alt="Image projet" />
           }
-        </ul>
+        </div>
       </div>
     }
 
-
-    <div class="modal-images">
-      <img *ngFor="let img of selectedProjet.images" [src]="img" alt="Image projet" />
-    </div>
   </div>
-  }
-
-</div>

@@ -1,25 +1,27 @@
 <div class="parcours-container">
   @if (loading) {
-  <div  class="loading">Chargement du parcours...</div>
+    <div  class="loading">Chargement du parcours...</div>
   }
   @if (error) {
-  <div  class="error">{{ error }}</div>
+    <div  class="error">{{ error }}</div>
   }
 
   @if(!loading && !error){
-<div  class="tree">
-    <div class="tree-root">
-      <div *ngFor="let step of steps" class="tree-branch">
-        <div class="node" [attr.data-id]="step.id">
-          <div class="node-content">
-            <h3>{{ step.title }}</h3>
-            <p class="year">{{ step.year }}</p>
-            <p class="description">{{ step.description }}</p>
+    <div  class="tree">
+      <div class="tree-root">
+        @for (step of steps; track step) {
+          <div class="tree-branch">
+            <div class="node" [attr.data-id]="step.id">
+              <div class="node-content">
+                <h3>{{ step.title }}</h3>
+                <p class="year">{{ step.year }}</p>
+                <p class="description">{{ step.description }}</p>
+              </div>
+            </div>
           </div>
-        </div>
+        }
       </div>
     </div>
-  </div>
 
-}
-  </div>
+  }
+</div>

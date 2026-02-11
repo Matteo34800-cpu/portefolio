@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { CategoryService } from '../../category.service'; // Adjust the path as necessary
 
@@ -7,7 +7,7 @@ import { CategoryService } from '../../category.service'; // Adjust the path as 
 @Component({
   selector: 'app-accueil',
   templateUrl: './acceuil.component.html',
-  imports: [CommonModule,RouterModule],
+  imports: [RouterModule],
   styleUrls: ['./acceuil.component.css'],
   standalone: true
 })
